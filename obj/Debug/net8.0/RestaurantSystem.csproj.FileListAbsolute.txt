@@ -137,4 +137,7 @@ C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug
 C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\net8.0\RestaurantSystem.pdb
 C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\net8.0\RestaurantSystem.genruntimeconfig.cache
 C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\net8.0\ref\RestaurantSystem.dll
+C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\bin\Debug\net8.0\Npgsql.dll
+C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\net8.0\RestaurantSystem.sourcelink.json
 C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

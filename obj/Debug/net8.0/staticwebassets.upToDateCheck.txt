@@ -1,3 +1,4 @@
+wwwroot\css\Category.css
 wwwroot\css\DashboardAdminStyle.css
 wwwroot\css\Details.css
 wwwroot\css\MenuItemAdmin.css
@@ -9,6 +10,7 @@ wwwroot\images\bc1.jpg
 wwwroot\images\c625a049-185d-41c0-99cc-624d50cee8c4.jpg
 wwwroot\images\calc1.png
 wwwroot\images\dc1.jpg
+wwwroot\images\download.png
 wwwroot\images\pastac1.jpg
 wwwroot\images\pc1.jpg
 wwwroot\images\peperony.jpg
@@ -75,5 +77,3 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\css\Category.css
-wwwroot\images\download.png

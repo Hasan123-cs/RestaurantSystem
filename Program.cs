@@ -25,11 +25,9 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection")
-    )
-);
+builder.Services.AddDbContext<AppDbContext>(
+options => options.UseNpgsql(
+builder.Configuration.GetConnectionString("DefaultConnection")));
 var app = builder.Build();
 
 
