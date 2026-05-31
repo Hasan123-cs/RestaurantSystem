@@ -22,56 +22,69 @@
         var userId = Context.Session.GetInt32("UserId");
     }
     <header>
-        <nav class="custom-navbar">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+            <div class="container">
 
-            <div class="logo">
-                🍽 Foodie
-            </div>
+                <a class="navbar-brand" href="/Home/Index">
+                    🍽 Foodie
+                </a>
 
-            <ul class="nav-links">
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav">
 
-                <li>
-                    <a href="/Home/Index">Home</a>
-                </li>
+                    <span class="navbar-toggler-icon"></span>
 
-                <li>
-                    <a href="/Home/Index#categories">Categories</a>
-                </li>
+                </button>
 
-                <li>
-                    <a href="/Home/Index#popular">Popular</a>
-                </li>
-                <li>
-                    <a href="/Cart">Cart</a>
-                </li>
+                <div class="collapse navbar-collapse" id="navbarNav">
 
-                <li>
-                    <a href="/Home/Index#about">About</a>
-                </li>
-                @if (userId != null)
-                {
-                <li>
-                    
-                    <a href="/Account/Login" class="text-danger fw-bold">Sign Out</a>
-                </li>
-                }
-            </ul>
-           
-                @if (userId is null)
-                {
-                    <div class="nav-buttons">
+                    <ul class="navbar-nav me-auto">
 
-                        <a href="/Account/Login" class="login-btn">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Home/Index">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Home/Index#categories">Categories</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Home/Index#popular">Popular</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Cart">Cart</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Home/Index#about">About</a>
+                        </li>
+
+                    </ul>
+
+                    @if (userId is null)
+                    {
+                        <a href="/Account/Login" class="btn btn-outline-light me-2">
                             Login
                         </a>
 
-                        <a href="/Account/Register" class="register-btn">
+                        <a href="/Account/Register" class="btn btn-warning">
                             Register
                         </a>
+                    }
+                    else
+                    {
+                        <a href="/Account/Login" class="btn btn-danger">
+                            Sign Out
+                        </a>
+                    }
 
-                    </div>
-                }
-            </nav>
+                </div>
+
+            </div>
+        </nav>
     </header>
     <div>
         @RenderBody()

@@ -141,3 +141,9 @@ C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\bin\Debug
 C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\net8.0\RestaurantSystem.sourcelink.json
 C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\bin\Debug\net8.0\out\web.config
+C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\bin\Debug\net8.0\out\appsettings.Development.json
+C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\bin\Debug\net8.0\out\appsettings.json
+C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\bin\Debug\net8.0\out\RestaurantSystem.deps.json
+C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\bin\Debug\net8.0\out\RestaurantSystem.runtimeconfig.json
+C:\Users\SADEK-COMPUTER\source\repos\RestaurantSystem\RestaurantSystem\bin\Debug\net8.0\out\RestaurantSystem.staticwebassets.endpoints.json
