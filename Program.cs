@@ -48,4 +48,5 @@ app.UseAuthorization();
 app.UseSession();
 app.MapRazorPages();
 
+app.MapGet("/", () => "API is running");
 app.Run();
