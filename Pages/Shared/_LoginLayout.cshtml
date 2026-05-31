@@ -1,0 +1,40 @@
+﻿<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+    .x{
+        background-image: url("/images/restaurant-bg.png");
+    }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="~/css/site.css" asp-append-version="true" />
+</head>
+
+
+
+<body class="d-flex flex-column min-vh-100">
+
+    <main class="flex-fill">
+        @RenderBody()
+    </main>
+
+    <footer class="x text-white text-center p-3">
+        © 2026 Restaurant System By Hasan Jakmara
+    </footer>
+
+</body>
+
+</html>

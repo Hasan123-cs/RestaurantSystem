@@ -1,0 +1,140 @@
+﻿@page
+@model RestaurantSystem.Pages.Admin.Category.AddCategoryModel
+@{
+    ViewData["Title"] = "Add Category";
+    Layout = "_AdminLayout";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+    body {
+        background: #eee;
+    }
+
+    .category-card {
+        max-width: 650px;
+        margin: auto;
+        border-radius: 25px;
+        overflow: hidden;
+    }
+
+    .card-header-custom {
+        background: linear-gradient(135deg, #ff9966, #ff5e62);
+        color: white;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .form-control {
+        border-radius: 12px;
+        padding: 12px;
+    }
+
+    .btn-custom {
+        border-radius: 12px;
+        padding: 10px 25px;
+        font-weight: 600;
+    }
+
+    .preview-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 15px;
+        border: 2px dashed #ddd;
+        margin-top: 15px;
+    }
+</style>
+
+<div class="container py-5">
+
+    <div class="card shadow-lg border-0 category-card">
+
+        <!-- Header -->
+        <div class="card-header-custom">
+            <h2>Add New Category</h2>
+            <p class="mb-0">Create a category for your restaurant menu</p>
+        </div>
+
+        <!-- Body -->
+        <div class="card-body p-4">
+
+            <form method="post" enctype="multipart/form-data">
+
+                <!-- Category Name -->
+                <div class="mb-4">
+                    <label asp-for="Category.Name" class="form-label fw-semibold">
+                        Category Name
+                    </label>
+
+                    <input asp-for="Category.Name"
+                           class="form-control"
+                           placeholder="Enter category name..." />
+
+                    <span asp-validation-for="Category.Name"
+                          class="text-danger"></span>
+                </div>
+
+                <!-- Background Image -->
+                <div class="mb-4">
+                    <label asp-for="Category.BackgroundImage"
+                           class="form-label fw-semibold">
+                        Background Image URL
+                    </label>
+
+                    <input type="file" name="CategoryImage" id="CategoryImage"
+                           class="form-control"
+                           placeholder="Paste image URL..." />
+
+                    <div asp-validation-summary="All"
+                          class="text-danger"></div>
+
+                    <!-- Preview -->
+                    <img id="imagePreview"
+                         src="https://placehold.co/600x220?text=Image+Preview"
+                         class="preview-image" />
+                </div>
+
+                <!-- Buttons -->
+                <div class="d-flex justify-content-between">
+
+                    <a asp-page="Index"
+                       class="btn btn-secondary btn-custom">
+                        Back
+                    </a>
+
+                    <button type="submit"
+                            class="btn btn-success btn-custom">
+                        Add Category
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    const imageInput =
+        document.querySelector("#CategoryImage");
+
+    const preview =
+        document.querySelector("#imagePreview");
+
+    imageInput.addEventListener("change", function () {
+
+        const file = imageInput.files[0];
+
+        if (file) {
+
+            preview.src = URL.createObjectURL(file);
+
+        }
+
+    });
+</script>

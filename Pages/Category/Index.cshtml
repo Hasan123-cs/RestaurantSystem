@@ -1,0 +1,101 @@
+﻿@page "{CategoryID:int}"
+@model RestaurantSystem.Pages.Category.IndexModel
+@{
+    Layout="_HomeLayout";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.cat.Name Category</title>
+
+    <link rel="stylesheet" href="~/css/Category.css" />
+
+</head>
+<body>
+
+    <!-- HERO -->
+
+    <section class="category-hero" style="background-image:
+        linear-gradient(rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)),
+        url('@Url.Content(@Model.cat.BackgroundImage)')" >
+
+        <div class="hero-content">
+
+            <h1>@Model.cat.Name</h1>
+
+            <p>
+                Discover our delicious @Model.cat.Name collection
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- MENU -->
+
+    <section class="menu-section">
+
+        <div class="section-title">
+
+            <h2>@Model.cat.Name</h2>
+
+            <p>
+                Fresh ingredients and unforgettable taste
+                
+            </p>
+
+        </div>
+        <form method="post"  asp-page-handler="MakeOrder" >
+        <div class="menu-container">
+
+          
+
+            @foreach (var item in Model.Menus)
+                {
+                    <!-- CARD -->
+
+                    <div class="menu-card  ">
+
+                        <img src="@Url.Content(item.ImagePath)" class="w-100">
+
+                        <div class="menu-info">
+
+                            <div class="menu-header">
+
+                                <h3>@item.Name</h3>
+
+                                <span class="price">
+                                    @item.Price $
+                                </span>
+                                
+                            </div>
+
+                            <p>
+                                @item.Description
+                            </p>
+
+                            <div class="buttons">
+
+                                
+                                <input type="hidden" name="id" value="@item.Id" />
+                                <button class="cart-btn" >
+                                    
+                                    Add To Cart
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                }
+        </div>
+                </form>
+
+    </section>
+
+</body>
+</html>

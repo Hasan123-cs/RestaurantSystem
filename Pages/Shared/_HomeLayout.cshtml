@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"]</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet"
+          href="~/css/Category.css"
+          asp-append-version="true" />
+</head>
+<body >
+    @{
+        var userId = Context.Session.GetInt32("UserId");
+    }
+    <header>
+        <nav class="custom-navbar">
+
+            <div class="logo">
+                🍽 Foodie
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="/Home/Index">Home</a>
+                </li>
+
+                <li>
+                    <a href="/Home/Index#categories">Categories</a>
+                </li>
+
+                <li>
+                    <a href="/Home/Index#popular">Popular</a>
+                </li>
+                <li>
+                    <a href="/Cart">Cart</a>
+                </li>
+
+                <li>
+                    <a href="/Home/Index#about">About</a>
+                </li>
+                @if (userId != null)
+                {
+                <li>
+                    
+                    <a href="/Account/Login" class="text-danger fw-bold">Sign Out</a>
+                </li>
+                }
+            </ul>
+           
+                @if (userId is null)
+                {
+                    <div class="nav-buttons">
+
+                        <a href="/Account/Login" class="login-btn">
+                            Login
+                        </a>
+
+                        <a href="/Account/Register" class="register-btn">
+                            Register
+                        </a>
+
+                    </div>
+                }
+            </nav>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <!-- FOOTER -->
+
+</body>
+
+</html>

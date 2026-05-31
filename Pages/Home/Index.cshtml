@@ -1,0 +1,223 @@
+﻿@page 
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+    Layout ="_HomeLayout";
+}
+
+<!-- Success Toast -->
+@if (TempData["Success"] != null)
+{
+    <div id="successToast"
+    class="toast show text-white border-0 position-fixed shadow"
+    style="top: 90px; right: 30px; z-index: 99999; background-color: #198754;">
+        <div class="d-flex">
+            <div class="toast-body">
+                @TempData["Success"]
+            </div>
+        </div>
+    </div>
+}
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="hero-badge">
+            BEST RESTAURANT EXPERIENCE
+        </span>
+
+        <h1>
+            Taste The Best <br />
+            Food In Town
+        </h1>
+
+        <p>
+            Fresh ingredients, fast delivery, and unforgettable taste.
+            Order your favorite meals online today.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#" class="btn-order">
+                Order Now
+            </a>
+
+            <a href="#" class="btn-menu">
+                Explore Menu
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CATEGORIES -->
+
+<section class="categories" id="categories">
+
+    <div class="section-title">
+
+        <h2>Food Categories</h2>
+
+        <p>
+            Choose your favorite category
+        </p>
+
+    </div>
+
+    <div class="categories-container">
+
+       <div class="categories-container">
+
+    @foreach (var item in Model.Categories)
+    {
+        <a href="/Category/Index/@item.Id"
+                   class="category-box object-fit-cover"
+           style="
+                background-image:
+                linear-gradient(rgba(0,0,0,0.45),
+                rgba(0,0,0,0.45)),
+                url('@item.BackgroundImage');
+
+                background-size: cover;
+                background-position: center;
+           ">
+
+            <h3>@item.Name</h3>
+
+        </a>
+    }
+
+</div>
+    </div>
+
+</section>
+
+<!-- POPULAR FOOD -->
+
+<section class="popular-food" id="popular">
+
+    <div class="section-title">
+
+        <h2>Popular Dishes</h2>
+
+        <p>
+            Most loved meals by customers
+        </p>
+
+    </div>
+
+    <div class="food-container">
+
+        <!-- CARD -->
+        @foreach (var v in Model.popular)
+        {
+            <div class="food-card">
+
+            <img src="@Url.Content(v.ImagePath)"
+                 alt="@v.Name">
+
+            <div class="food-info">
+
+                <div class="food-header">
+
+                    <h3>@v.Name</h3>
+
+                    <span>$ @v.Price </span>
+
+                </div>
+
+                <p>
+                    @v.Description
+                </p>
+
+                <a  href="../Order/@v.id" class="btn btn-primary bg-warning border-0 w-100 rounded-3  " >
+                    Add To Cart
+                </a>
+                </div>
+            </div>
+            }
+        </div>
+
+     
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="about-image">
+
+        <img src="@Url.Content("/images/RestaurantPage.jpg")"
+             alt="Restaurant">
+
+    </div>
+
+    <div class="about-content">
+
+        <h2>
+            About Our Restaurant
+        </h2>
+
+        <p>
+            We combine modern restaurant experience with high quality meals
+            and fast online ordering system.
+        </p>
+
+        <div class="stats">
+
+            <div class="stat-box">
+
+                <h3>10K+</h3>
+
+                <span>Customers</span>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h3>50+</h3>
+
+                <span>Food Items</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <h3>
+        Restaurant Menu System
+    </h3>
+
+    <p>
+        ASP.NET Core Razor Pages Project
+    </p>
+
+    <span>
+        © 2026  Hasan Jakmara
+    </span>
+
+</footer>
+<script>
+    window.addEventListener('load', function () {
+
+        var toastEl = document.getElementById('successToast');
+
+        if (toastEl) {
+            var toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        }
+
+    });
+</script>

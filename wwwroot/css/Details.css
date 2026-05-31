@@ -1,0 +1,13 @@
+﻿body {
+    background-color: rgba(20, 20, 20, 0.9);
+    color: white;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border: none;
+}
+
+.table {
+    background-color: #1e1e1e;
+}

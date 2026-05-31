@@ -1,0 +1,90 @@
+﻿@page "{id:int}"
+@model RestaurantSystem.Pages.Admin.Category.DetailsCategoryModel
+
+@{
+    ViewData["Title"] = "Category Details";
+    Layout = "_AdminLayout";
+}
+
+<div class="container py-4">
+
+    <div class="card shadow border-0">
+
+        <div class="card-header bg-dark text-white">
+            <h3 class="mb-0">Category Details</h3>
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-4 text-center">
+
+                    <img src="@Model.Category.BackgroundImage"
+                         class="img-fluid rounded shadow-sm"
+                         style="height:250px; object-fit:cover;" />
+
+                </div>
+
+                <div class="col-md-8">
+
+                    <h2 class="fw-bold mb-3">
+                        @Model.Category.Name
+                    </h2>
+
+                    <p class="fs-5">
+                        <strong>Total Menu Items:</strong>
+                        @(Model.Category.MenuItems?.Count ?? 0)
+                    </p>
+
+                    <hr />
+
+                    <h4 class="mb-3">Menu Items</h4>
+
+                    @if (Model.Category.MenuItems != null
+                        && Model.Category.MenuItems.Count > 0)
+                    {
+                        <table class="table table-bordered table-hover">
+
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                @foreach (var item in Model.Category.MenuItems)
+                                {
+                                    <tr>
+                                        <td>@item.Name</td>
+                                        <td>$@item.Price</td>
+                                    </tr>
+                                }
+
+                            </tbody>
+
+                        </table>
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning">
+                            No menu items found in this category.
+                        </div>
+                    }
+
+                    <a asp-page="Index"
+                       class="btn btn-secondary mt-3">
+                        Back
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

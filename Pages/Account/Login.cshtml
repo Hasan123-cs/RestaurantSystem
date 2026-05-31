@@ -1,0 +1,61 @@
+﻿@page "{idItem:int?}"
+@model RestaurantSystem.Pages.Admin.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_LoginLayout";
+    ViewData["Title"] = "Login";
+}
+
+
+<div class="login-page">
+
+    <div class="container-fluid login-container d-flex justify-content-center align-items-center">
+
+        <div class="col-md-4">
+
+            <div class="login-card shadow">
+
+                <h2 class="text-center mb-4">
+                    Restaurant Login
+                </h2>
+
+                <form method="post">
+
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input asp-for="Email" class="form-control" />
+                        <span class="has-validation text-danger is-invalid" asp-validation-for="Email"></span>
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Password</label>
+                        <input asp-for="Password"
+                               type="password"
+                               class="form-control" />
+                               <span class="has-validation text-danger is-invalid" asp-validation-for="Password"></span> 
+                    </div>
+                 
+                    <div class="d-grid">
+                        <button type="submit"
+                                class="btn btn-dark">
+                            Login
+                        </button>
+                    </div>
+                    <input type="hidden" name="id" value="@Model.id" />
+                    
+                </form>
+                <div class="d-flex justify-content-around m-3">
+                    <label> Dont have Account?</label>
+                    <a href="/Account/Register"
+                           class="link-dark">
+                        Register now
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

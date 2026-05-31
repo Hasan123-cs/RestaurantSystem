@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Admin Panel</title>
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="~/css/site.css" />
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR + CONTENT -->
+    <div class="d-flex">
+
+        <!-- SIDEBAR -->
+        <div class="bg-dark text-white p-3 vh-100"
+             style="width:260px; position:fixed;">
+
+            <h3 class="text-center mb-4 fw-bold">
+                Admin Panel
+            </h3>
+
+            <hr />
+
+            <!-- DASHBOARD -->
+            <a asp-page="/Admin/AdminDashboard"
+               class="btn btn-dark w-100 text-start mb-2">
+
+                <i class="fa-solid fa-chart-line me-2"></i>
+                Dashboard
+
+            </a>
+
+            <!-- CATEGORY -->
+            <div class="mb-2">
+
+                <button class="btn btn-dark w-100 text-start"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#categoryMenu">
+
+                    <i class="fa-solid fa-layer-group me-2"></i>
+                    Categories
+
+                </button>
+
+                <div class="collapse mt-2" id="categoryMenu">
+
+                    <a asp-page="/Admin/Category/Index"
+                       class="btn btn-outline-light w-100 text-start mb-1">
+
+                        All Categories
+                    </a>
+
+                    <a asp-page="/Admin/Category/AddCategory"
+                       class="btn btn-outline-light w-100 text-start mb-1">
+
+                        Add Category
+                    </a>
+                    
+                </div>
+
+            </div>
+
+            <!-- MENU ITEM -->
+            <div class="mb-2">
+
+                <button class="btn btn-dark w-100 text-start"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menuItemMenu">
+
+                    <i class="fa-solid fa-burger me-2"></i>
+                    Menu Items
+
+                </button>
+
+                <div class="collapse mt-2" id="menuItemMenu">
+
+                    <a asp-page="/Admin/MenuItem/Index"
+                       class="btn btn-outline-light w-100 text-start mb-1">
+
+                        All Menu Items
+                    </a>
+
+                    <a asp-page="/Admin/MenuItem/AddMenuItem"
+                       class="btn btn-outline-light w-100 text-start mb-1">
+
+                        Add Menu Item
+                    </a>
+                   
+                </div>
+
+            </div>
+
+            <hr />
+
+            <!-- BACK -->
+            <a asp-page="/Account/Login"
+               class="btn btn-outline-warning w-100">
+
+                Back To Website
+
+            </a>
+
+        </div>
+
+        <!-- PAGE CONTENT -->
+        <div class="flex-grow-1 p-4"
+             style="margin-left:260px;">
+
+            @RenderBody()
+
+        </div>
+
+    </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

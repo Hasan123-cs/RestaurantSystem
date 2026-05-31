@@ -1,0 +1,54 @@
+﻿@page
+@model RestaurantSystem.Pages.Account.RegisterModel
+@{
+    Layout = "_LoginLayout";
+}
+
+<div class="register-wrapper">
+
+    <div class="register-card">
+
+        <h2 class="register-title">Create Account</h2>
+
+        <form method="post">
+
+            <div class="mb-3">
+                <label>Name</label>
+                <input type="text" asp-for="Input.Name" class="form-control" placeholder="Enter your name" />
+                <span class="is-invalid text-danger" asp-validation-for="Input.Name"></span>
+            </div>
+
+            <div class="mb-3">
+                <label>Email</label>
+                <input type="email" asp-for="Input.Email" class="form-control" placeholder="Enter your email" />
+                <span class="is-invalid text-danger" asp-validation-for="Input.Email"></span>
+            </div>
+
+            <div class="mb-3">
+                <label>Password</label>
+                <input type="password" asp-for="Input.Password" class="form-control" placeholder="Enter password" />
+                <span class="is-invalid text-danger" asp-validation-for="Input.Password"></span>
+            
+            </div>
+
+            <div class="mb-3">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control" asp-for="Input.ConfirmPassword" placeholder="Confirm password" />
+                <span class="is-invalid text-danger" asp-validation-for="Input.ConfirmPassword"></span>
+                
+            </div>
+
+            <button type="submit" class="btn-register">
+                Register
+            </button>
+
+            <div class="login-link">
+                Already have an account?
+                <a href="/Account/Login">Login</a>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
