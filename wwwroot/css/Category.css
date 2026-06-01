@@ -73,7 +73,7 @@ body {
 }
 
     .menu-card:hover {
-        transform: translateY(-10px);
+        transform: translateY(-30px);
     }
 
     .menu-card img {

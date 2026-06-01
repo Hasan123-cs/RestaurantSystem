@@ -61,7 +61,7 @@ namespace RestaurantSystem.Pages.Admin.Category
            
             await c.UpdateRecentCategory(Category);
 
-            return RedirectToPage("../MenuItem/Index");
+            return RedirectToPage("Index");
         }
 
     }
