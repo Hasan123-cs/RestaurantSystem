@@ -42,7 +42,9 @@ namespace RestaurantSystem.Pages.Admin
             if(access==1)
             {
                 // for an admin redirect to admin page
-            return RedirectToPage("../Admin/AdminDashboard");
+                HttpContext.Session.SetInt32("admin", 1);
+                return RedirectToPage("../Admin/AdminDashboard");
+
             }
             HttpContext.Session.SetInt32("UserId", access);
             if (id == 0) { return RedirectToPage("/Home/Index"); }

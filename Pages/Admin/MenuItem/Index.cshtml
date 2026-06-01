@@ -3,6 +3,14 @@
 @{
     ViewData["Title"] = "Menu Items";
     Layout = "_AdminLayout";
+    int? adminCheck =
+HttpContext.Session.GetInt32("admin");
+}
+@if (adminCheck is null)
+{
+    <script>
+        window.location.href = "/Account/Login";
+    </script>
 }
 
 <div class="container py-4">

@@ -7,6 +7,7 @@ wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\images\b1.png
 wwwroot\images\bc1.jpg
+wwwroot\images\Blue and Purple Youtube Thumbnail Background .png
 wwwroot\images\c625a049-185d-41c0-99cc-624d50cee8c4.jpg
 wwwroot\images\calc1.png
 wwwroot\images\dc1.jpg
@@ -18,7 +19,6 @@ wwwroot\images\Register.png
 wwwroot\images\restaurant-bg.png
 wwwroot\images\RestaurantPage.jpg
 wwwroot\images\sc1.jpg
-wwwroot\images\WIN_20250531_14_19_07_Pro.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map

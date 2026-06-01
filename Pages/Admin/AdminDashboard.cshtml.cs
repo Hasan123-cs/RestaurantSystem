@@ -8,6 +8,7 @@ namespace RestaurantSystem.Pages.Admin
 {
     public class AdminDashboardModel : PageModel
     {
+
         public DashboardAdmin service1 { get; set; }
         public UserOperation service2 { get; set; }
         public AdminDashboardModel(DashboardAdmin d ,  UserOperation service1)

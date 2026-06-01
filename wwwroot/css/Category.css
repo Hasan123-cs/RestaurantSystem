@@ -65,10 +65,11 @@ body {
 .menu-card {
     background: white;
     border-radius: 20px;
-    width: 100%;
+    width: 80%;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
     .menu-card:hover {
@@ -80,9 +81,14 @@ body {
         height: 230px;
         object-fit: cover;
     }
-
 .menu-info {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.buttons {
+    margin-top: auto;
 }
 
 .menu-header {

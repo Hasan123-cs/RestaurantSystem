@@ -1,13 +1,13 @@
 ﻿body {
-    overflow: hidden;
     background: #f8f9fa;
     font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
 }
 
 .left-side {
-    height: 100vh;
     background: white;
-    padding: 180px 60px 60px 60px;
+    min-height: 100vh;
+    padding: 40px 40px 30px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,8 +84,8 @@
     }
 
 .right-side {
-    height: 100vh;
-    overflow: hidden;
+    
+    min-height: 50vh;
     position: relative;
 }
 
@@ -121,7 +121,13 @@
         transform: translateX(0);
     }
 }
-
+.container-fluid {
+    margin-top: 70px;
+}
+.left-side,
+.right-side {
+    flex: 1;
+}
 @keyframes zoomIn {
     from {
         transform: scale(1.2);
@@ -148,22 +154,37 @@
     }
 }
 
-@media(max - width:768px) {
-
-    body {
-        overflow: auto;
-    }
+@media (max-width: 991px) {
 
     .left-side {
-        height: auto;
+        min-height: auto;
         padding: 40px 25px;
     }
 
     .right-side {
-        height: 50vh;
+        min-height: 45vh;
     }
 
     .food-title {
-        font-size: 38px;
+        font-size: 2.5rem;
+    }
+
+    .food-desc {
+        font-size: 1rem;
+    }
+
+    .price {
+        font-size: 2.2rem;
+    }
+
+    .quantity-box {
+        justify-content: center;
+    }
+
+    .badge-custom {
+        top: 15px;
+        right: 15px;
+        font-size: 14px;
+        padding: 8px 14px;
     }
 }
