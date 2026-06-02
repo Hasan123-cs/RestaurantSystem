@@ -38,7 +38,7 @@
 
         <p class="text-white"><strong>Total Price:</strong> $@Model.Order.TotalPrice</p>
 
-        <p class="text-white"><strong>Date:</strong> @Model.Order.OrderDate</p>
+        <p class="text-white"><strong>Date:</strong> @Model.Order.OrderDate.ToLocalTime()</p>
 
     </div>
 

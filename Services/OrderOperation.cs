@@ -129,7 +129,7 @@ namespace RestaurantSystem.Services
                 UserId = userId,
                 TotalPrice = total,
                 Status = "Pending",
-                OrderDate = DateTime.Now
+                OrderDate = DateTime.UtcNow
             };
 
             // SAVE ORDER

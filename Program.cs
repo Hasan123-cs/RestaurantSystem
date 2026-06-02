@@ -48,12 +48,4 @@ app.UseAuthorization();
 app.UseSession();
 app.MapRazorPages();
 
-app.MapGet("/", () =>
-{
-    PasswordHasher<string> passwordHasher = new PasswordHasher<string>();
-
-    string hashedPassword =
-        passwordHasher.HashPassword(null, "adminHasan123");
-    return hashedPassword;
-});
 app.Run();
