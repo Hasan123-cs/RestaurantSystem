@@ -48,8 +48,13 @@ namespace RestaurantSystem.Services
 
             return user.Id; // normal user
         }
-        public async Task RegisterUserAccount(UserViewBinding u)
+        public async Task<int> RegisterUserAccount(UserViewBinding u)
         {
+            var x = await _db.Users.FirstOrDefaultAsync(z => z.Email == u.Email);
+            if(x != null)
+            {
+                return -1;
+            }
             // here consider all user register from site is client so for admin the Manager created here acc using minimal api's
             User user = new User()
             {
@@ -60,6 +65,7 @@ namespace RestaurantSystem.Services
             };
             await _db.Users.AddAsync(user);
             await _db.SaveChangesAsync();
+            return 0;
         }
         public async Task<User> LoadUser(int id)
         {

@@ -40,7 +40,15 @@ namespace RestaurantSystem.Pages.Account
 
             Input.Password = hashedPassword;
 
-            await operation.RegisterUserAccount(Input);
+            int x  = await operation.RegisterUserAccount(Input);
+            if(x==-1)
+            {
+                ModelState.AddModelError("Input.Email", "Email already Exist");
+            }
+            if(!ModelState.IsValid)
+            {
+                return Page();
+            }
             return RedirectToPage("/Account/Login");
         }
     }
