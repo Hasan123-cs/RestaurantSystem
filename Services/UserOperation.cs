@@ -15,6 +15,7 @@ namespace RestaurantSystem.Services
         }
         public async Task<int> CheckUserLogin(string Email, string password)
         {
+            
             var user = await _db.Users
       .FirstOrDefaultAsync(u => u.Email == Email);
 
@@ -22,7 +23,10 @@ namespace RestaurantSystem.Services
             {
                 return -1; // email not found
             }
-
+            if(password is null)
+            {
+                return -3;
+            }
             PasswordHasher<string> passwordHasher =
                 new PasswordHasher<string>();
 

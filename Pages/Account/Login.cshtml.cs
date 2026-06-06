@@ -27,11 +27,11 @@ namespace RestaurantSystem.Pages.Admin
         public async Task<IActionResult> OnPostAsync()
         {
             var access = await Operation.CheckUserLogin(Email,Password);
-            if(access==-1 || access==0 || !ModelState.IsValid)
+            if(access==-1 || access==0 || access==-3 || !ModelState.IsValid)
             {
-                if(string.IsNullOrEmpty(Password))
+                if(access==-3)
                 {
-                    return Page();
+                    ModelState.AddModelError("Password", "Password Is Required");
                 }
                 if(access==-1)
                 {
