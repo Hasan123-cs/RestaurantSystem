@@ -29,6 +29,10 @@ namespace RestaurantSystem.Pages.Admin
             var access = await Operation.CheckUserLogin(Email,Password);
             if(access==-1 || access==0 || !ModelState.IsValid)
             {
+                if(string.IsNullOrEmpty(Password))
+                {
+                    return Page();
+                }
                 if(access==-1)
                 {
                     ModelState.AddModelError("Email", " the email Invalid");
